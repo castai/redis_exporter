@@ -21,9 +21,8 @@ var (
 )
 
 type GCPTokenProvider struct {
-	mu             sync.RWMutex
-	expiryInterval time.Duration
-	expiryDelta    time.Duration
+	mu          sync.RWMutex
+	expiryDelta time.Duration
 
 	tokenFn  func(ctx context.Context) (*oauth2.Token, error)
 	tokenErr error
