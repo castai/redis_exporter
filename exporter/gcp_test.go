@@ -29,7 +29,6 @@ func Test_TokenProvider(t *testing.T) {
 
 	t.Run("should return new token after previous expires", func(t *testing.T) {
 		p := NewGCPTokenProvider()
-		p.expiryInterval = 100 * time.Millisecond
 		p.expiryDelta = 0
 
 		calls := 0
@@ -62,7 +61,6 @@ func Test_TokenProvider(t *testing.T) {
 
 	t.Run("should return error if token refresh fails", func(t *testing.T) {
 		p := NewGCPTokenProvider()
-		p.expiryInterval = 100 * time.Millisecond
 		p.expiryDelta = 0
 
 		calls := 0
